@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 8
+install:
+  - npm install yaml-lint jsonlint
+script:
+  - "for i in APIs/*.raml; do echo Linting $i; perl -pi -e 's/!include//' $i; ./node_modules/.bin/yamllint $i > /dev/null || exit 1 ; done"
+  - "for i in APIs/schemas/*.json; do echo Linting $i; ./node_modules/.bin/jsonlint > /dev/null || exit 1 ; done"
+branches:
+  except:
+    - gh-pages
