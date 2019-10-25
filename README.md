@@ -1,4 +1,4 @@
-# [Work In Progress] AMWA NMOS Template Specification
+# [Work In Progress] AMWA NMOS Template Specification [![Build Status](https://travis-ci.com/AMWA-TV/nmos-template.svg?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-template)
 
 This repository is a template for future NMOS specifications
 
