@@ -5,7 +5,7 @@ install:
   - npm install yaml-lint jsonlint
 script:
   - "for i in APIs/*.raml; do perl -pi -e 's/!include//' $i; if ./node_modules/.bin/yamllint $i > output; then echo $i ok; else echo $i failed:; cat output; exit 1;  fi; done"
-  - "for i in APIs/schemas/*.json; do if ./node_modules/.bin/jsonlint > output; then echo $i ok; else echo $i failed:; cat output; exit 1; fi; done"
+  - "for i in APIs/schemas/*.json; do if ./node_modules/.bin/jsonlint $i > output; then echo $i ok; else echo $i failed:; cat output; exit 1; fi; done"
 branches:
   except:
     - gh-pages
