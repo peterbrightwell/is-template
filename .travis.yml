@@ -4,7 +4,7 @@ node_js:
 install:
   - npm install yaml-lint jsonlint
 script:
-  - ./lint.sh
+  - .ci-scripts/lint.sh
 branches:
   except:
     - gh-pages
