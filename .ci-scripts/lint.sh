@@ -2,7 +2,7 @@
 
 echo Linting RAML...
 for i in APIs/*.raml; do
-    perl -pi -e 's/!include//' $i
+    perl -pi.bak -e 's/!include//' $i
     if ./node_modules/.bin/yamllint $i > output; then
         echo $i ok
     else
@@ -10,6 +10,7 @@ for i in APIs/*.raml; do
         echo -e "\033[31m$i failed\033[0m"
         failed=y
     fi
+    mv $i.bak $i
 done
 
 echo Linting JSON...
