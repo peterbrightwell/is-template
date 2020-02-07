@@ -4,3 +4,7 @@
 *~
 *#
 npm-debug.log
+output
+node_modules/
+package.json
+yarn.lock
