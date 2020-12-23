@@ -1,6 +1,7 @@
 # \[Work In Progress\] AMWA NMOS Template Specification 
 
-[![Build Status](https://travis-ci.com/AMWA-TV/nmos-template.svg?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-template)
+[![Lint Status](https://github.com/AMWA-TV/nmos-template/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-template/actions?query=workflow%3ALint)
+[![Render Status](https://github.com/AMWA-TV/nmos-template/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-template/actions?query=workflow%3ARender)
 
 This repository is a template for future NMOS specifications
 
