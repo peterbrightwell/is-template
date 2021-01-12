@@ -9,12 +9,12 @@ This repository is a template for future NMOS specifications
 
 Readers are advised to be familiar with:
 
-- The [overview of Networked Media Open Specifications](https://amwa-tv.github.io/nmos)
-- [AMWA BCP-003](https://amwa-tv.github.io/nmos-api-security) Best Practices for NMOS API Security
+- The [overview of Networked Media Open Specifications](https://specs.amwa.tv/nmos)
+- [AMWA BCP-003](https://specs.amwa.tv/nmos-api-security) Best Practices for NMOS API Security
 
 Readers should then read the [documentation](docs/), [APIs](APIs/) (RAML and JSON Schema), and [examples](examples/) (JSON) 
 
-> HTML rendered versions of all NMOS Specifications are available on the [NMOS GitHub pages](https://amwa-tv.github.io/nmos)
+> HTML rendered versions of all NMOS Specifications are available on the [NMOS Specification pages](https://specs.amwa.tv/nmos)
 
 ## Contents
 
