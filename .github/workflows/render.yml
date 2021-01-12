@@ -25,6 +25,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+      - name: Install Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.x'
+      - name: Install Bundler
+        run: gem install bundler
       - name: Setup
         run: make distclean build-tools
       - name: Build
