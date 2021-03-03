@@ -33,7 +33,7 @@ jobs:
         run: gem install bundler
       - name: Run Docker for PlantUML server
         run: docker run -d -p 8080:8080 plantuml/plantuml-server:jetty
-       - name: Setup 
+      - name: Setup 
         run: make -C .render distclean build-tools
       - name: Build site
         run: make -C .render build
