@@ -18,8 +18,10 @@ This repository holds the source for this Specification, part of the family of [
 
 ### How does it work?
 
-- It contains examples of documentation, API, schemas, and examples.
-- These are rendered to HTML and uploaded to specs.amwa.tv
+- It contains examples of [documentation](docs/), [APIs](APIs/), [schemas](APIs/schemas/), and [examples](examples/)
+- It provides a style guide and other advice for specification authors
+  - This includes how to configure the repo for automatic linting and rendering to `specs.amwa.tv`
+- Select `AMWA-TV/nmos-template` as the template when creating the new repo.
 
 <!-- INTRO-END -->
 

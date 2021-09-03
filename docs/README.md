@@ -21,6 +21,7 @@ See https://github.com/AMWA-TV/nmos-template/docs/README.md for an example of th
 ### Introduction
 
 - [Overview](Overview.md)
+- [Style Guide](Style%20Guide.md)
 
 ### Miscellaneous
 
