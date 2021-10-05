@@ -17,4 +17,4 @@ jobs:
     name: Build
     steps:
       - name: Use NMOS Render
-        uses: STandon-3/nmos-docker-test@latest
+        uses: docker://peterbrightwell/nmos-render:latest
