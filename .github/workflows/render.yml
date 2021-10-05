@@ -18,3 +18,5 @@ jobs:
     steps:
       - name: Use NMOS Render
         uses: docker://peterbrightwell/nmos-render:latest
+      - name: Clone
+        run: git clone https://github.com/peterbrightwell/nmos-template /nmos-template
