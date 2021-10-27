@@ -6,6 +6,8 @@
 
 _(c) AMWA 2021, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
+![NMOS logo](images/NMOS-logo.png)
+
 > ## Instructions
 >
 > **Delete this section after creating a new repo from this template.**
