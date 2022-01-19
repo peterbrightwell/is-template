@@ -28,86 +28,38 @@
 
         <div class="header" id="myHeader">
 
-        {% unless site.amwa_id contains "IS-" or site.amwa_id contains "MS-" or site.amwa_id contains "BCP-002-" or site.amwa_id contains "BCP-003-" or site.amwa_id contains "BCP-004-" %}
-            <a href="{{ site.baseurl }}/">HOME</a>
-        {% endunless %}
+        {% if site.default_tree == "branches/main" %}
+          <a href="{{ site.baseurl }}/">HOME</a>
+        {% endif %}
 
-          {% case site.amwa_id %}
+        {% if site.data.docs %}
+          {% include docs_menu.html %}
+        {% endif %}
+        {% if site.data.apis %}
+          {% include apis_menu.html %}
+        {% endif %}
+        {% if site.data.examples %}
+          {% include examples_menu.html %}
+        {% endif %}
+        {% if site.data.branches or site.data.releases %}
+          {% include versions_menu.html %}
+        {% endif %}
+        {% if site.data.specs %}
+          {% include spec_menu.html menu_name="IS" menu_title="Interface Specifications" filter_id="IS-" %}
+          {% include spec_menu.html menu_name="BCP" menu_title="Best Common Practices" filter_id="BCP-" %}
+          {% include spec_menu.html menu_name="MS" menu_title="Data Model Specifications" filter_id="MS-" %}
+          {% include spec_menu.html menu_name="INFO" menu_title="Informative Documents" filter_id="INFO-" %}
+        {% endif %}
+        {% if site.data.registers %}
+          {% include registers_menu.html %}
+        {% endif %}
 
-          {% when "SPECS" %}
+          {% if site.amwa_id == "SPECS" %}
+
             <a href="https://specs.amwa.tv/nmos">NMOS</a>
             <a href="https://amwa.tv/projects/AS-11.shtml">AS-11</a>
 
-          {% when "NMOS" %}
-            <span class="dropdown">INTRO
-              <div class="dropdown-content">
-                  <p><a href="https://www.amwa.tv/nmos-overview">Introduction to NMOS</a></p>
-                  <p><a href="https://{{ site.spec_server }}/nmos/branches/main/docs/Technical_Overview.html">NMOS Technical Overview</a></p>
-                  <p><a href="https://{{ site.spec_server }}/nmos/branches/main/docs/FAQ.html">FAQ</a></p>
-                  <p><a href="https://{{ site.spec_server }}/nmos/branches/main/docs/Glossary.html">Glossary</a></p>
-                  <p><a href="https://{{ site.spec_server }}/nmos/branches/main/docs/NMOS_Solutions.html">Implementations</a></p>
-                  <p><a href="https://github.com/AMWA-TV/nmos/wiki">WIKI (Legacy)</a></p>
-              </div>
-            </span>
-
-          {% when "BCP-002" %}
-            <span class="dropdown">RECS
-                <div class="dropdown-content">
-                  <p><a href="{{ site.baseurl }}/branches/main/best-practice-natural-grouping.html">Natural Grouping</a></p>
-                </div>
-            </span>
-
-          {% when "BCP-003" %}
-            <span class="dropdown">RECS
-                <div class="dropdown-content">
-                  <p><a href="{{ site.baseurl }}/branches/v1.0-dev/bcp-003-01-securing-communications.html">BCP-003-01 Securing Communications</a></p>
-                  <p><a href="{{ site.baseurl }}/branches/v1.0-dev/bcp-003-02-authorization.html">BCP-003-02 Authorization</a></p>
-                  <p><a href="{{ site.baseurl }}/branches/v1.0-dev/bcp-003-03-certificate-provisioning.html">BCP-003-03 Certificate Provisioning</a></p>
-                </div>
-            </span>
-
-          {% when "NMOS-PARAMETER-REGISTERS" %}
-
-          {% when "MS-04" %}
-            <a href="{{ site.baseurl }}/{{ site.default_tree }}/docs/1.0._Overview.html">OVERVIEW</a>
-            <a href="{{ site.baseurl }}/{{ site.default_tree }}/docs/2.0._Identity_and_Timing_Model.html">MODEL</a>
-            <a href="{{ site.baseurl }}/{{ site.default_tree }}/docs/3.0._Practical_Guidance_for_Media.html">GUIDANCE</a>
-
-          {% when "NMOS-TESTING" %}
-            <a href="{{ site.baseurl }}/{{ site.default_tree }}/docs">DOCS</a>
-
           {% else %}
-
-            {% if site.amwa_id contains "IS-" or site.amwa_id contains "BCP-003-" or site.amwa_id contains "BCP-004-" %}
-              {% include docs_menu.html %}
-              {% include apis_menu.html %} 
-              {% include examples_menu.html %}
-
-                <div class="dropdown-content">
-                  {% if site.amwa_id contains "IS-" %}
-                  {% endif %}
-                  {% if site.amwa_id contains "IS-" or site.amwa_id contains "BCP-004-" %}
-                    <p><a href="{{ site.baseurl }}/{{ site.default_tree }}/APIs/schemas">SCHEMAS</a></p>
-                    <p><a href="{{ site.baseurl }}/{{ site.default_tree }}/examples">EXAMPLES</a></p>
-                  {% endif %}
-                </div>
-              </span>
-
-              {% include versions_menu.html %}
-
-            {% endif %}
-
-            {% else %}
-              UNKNOWN ID
-          {% endcase %}
-
-          {% if site.amwa_id != "SPECS" %}
-
-            {% include spec_menu.html menu_name="IS" menu_title="Interface Specifications" filter_id="IS-" %}
-            {% include spec_menu.html menu_name="BCP" menu_title="Best Common Practices" filter_id="BCP-" %}
-            {% include spec_menu.html menu_name="MS" menu_title="Data Model Specifications" filter_id="MS-" %}
-            {% include spec_menu.html menu_name="INFO" menu_title="Informative Documents" filter_id="INFO-" %}
-            {% include registers_menu.html %}
 
             <span class="dropdown">DEVEL
               <div class="dropdown-content">
@@ -118,7 +70,6 @@
               </div>
             </span>
 
-
           {% endif %}
 
           <span class="dropdown">SEARCH
@@ -128,41 +79,35 @@
             </div>
           </span>
 
-        {% if site.amwa_id contains "IS-"
-           or site.amwa_id contains "MS-"
-           or site.amwa_id contains "BCP-002-"
-           or site.amwa_id contains "BCP-003-"
-           or site.amwa_id contains "BCP-004-"
-           or site.amwa_id contains "BCP-005-"
-           or site.amwa_id contains "BCP-006-" %}
-
+        {% unless site.default_tree == "branches/main" %}
           <div class="breadcrumbs">
-              {% assign dirlist = page.url | split: "/" %}
-              {% assign nlinks = dirlist.size | minus: 2 | at_most: 4 %}
-              {% assign link = site.baseurl | append: "/" %}
-              <a href="{{ link }}">{{ site.amwa_id }}</a> ➤
-              {% for i in (1..nlinks) %}
-                {% assign link = link | append: dirlist[i] | append: "/" %}
-                <a href="{{ link }}"> {{ dirlist[i] }} </a> ➤
-              {% endfor %}
-              {% if dirlist.size > 2 %}
-                {% if dirlist[1] == "branches" %}
-                  <span class="version-warning"><a href="{{ site.baseurl }}/releases">Viewing live branch. Click here for list of published releases.</a></span>
-                {% elsif dirlist[1] == "releases" %}
-                  {% assign this_tree = dirlist[2] | prepend: "releases/" %}
-                  {% if this_tree != site.default_tree  %}
-                    <span class="version-warning"><a href="{{ site.baseurl }}/releases">Viewing old release. Click here for list of published releases.</a></span>
-                  {% endif %}
+            {% assign dirlist = page.url | split: "/" %}
+            {% assign nlinks = dirlist.size | minus: 2 | at_most: 4 %}
+            {% assign link = site.baseurl | append: "/" %}
+            <a href="{{ link }}">{{ site.amwa_id }}</a> ➤
+            {% for i in (1..nlinks) %}
+              {% assign link = link | append: dirlist[i] | append: "/" %}
+              <a href="{{ link }}"> {{ dirlist[i] }} </a> ➤
+            {% endfor %}
+            {% if dirlist.size > 2 %}
+              {% if dirlist[1] == "branches" %}
+                <span class="version-warning"><a href="{{ site.baseurl }}/releases">Viewing live branch. Click here for list of published releases.</a></span>
+              {% elsif dirlist[1] == "releases" %}
+                {% assign this_tree = dirlist[2] | prepend: "releases/" %}
+                {% if this_tree != site.default_tree  %}
+                  <span class="version-warning"><a href="{{ site.baseurl }}/releases">Viewing old release. Click here for list of published releases.</a></span>
                 {% endif %}
               {% endif %}
-              </div>
-        {% endif %}
+            {% endif %}
+          </div>
+        {% endunless %}
 
         </div>
 
       <div class="content">
         <br/>
         {{ content }}
+
       </div>
 
       <div class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
