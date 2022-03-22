@@ -11,4 +11,4 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          gh issue edit $ISSUE_URL --add-label "requires triage"
+          gh issue edit $ISSUE_URL --add-label "triage"
