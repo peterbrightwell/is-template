@@ -8,8 +8,6 @@ _(c) AMWA 2023, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ![NMOS logo](images/NMOS-logo.png)
 
-![Broken link][images/broken.png]
-
 > ## Instructions
 >
 > **Delete this section after creating a new repo from this template.**
